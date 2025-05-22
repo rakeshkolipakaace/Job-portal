@@ -1,0 +1,23 @@
+{
+  "name": "backend-project",
+  "version": "1.0.0",
+  "description": "job portal project",
+  "homepage": "https://github.com/rakeshkolipakaace/Job-portals#readme",
+  "bugs": {
+    "url": "https://github.com/rakeshkolipakaace/Job-portals/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakeshkolipakaace/Job-portals.git"
+  },
+  "license": "ISC",
+  "author": "Rakesh",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
