@@ -4,6 +4,8 @@ import express from "express";
 
 import dotenv from "dotenv";
 
+import colors from "colors";
+
 
 
 //config
@@ -23,6 +25,6 @@ app.get('/',(req,res)=>{
  const PORT=process.env.PORT || 4000;
 app.listen(PORT,()=>{
 
-    console.log(`Server is running In ${process.env.DEV_MODE} mode on port ${PORT}`);
+    console.log(`Server is running In ${process.env.DEV_MODE} mode on port ${PORT}`.blue.bold);
 
 })
