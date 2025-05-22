@@ -6,10 +6,13 @@ import dotenv from "dotenv";
 
 import colors from "colors";
 
+import connectDB from "./config/db.js";
 
 
 //config
 dotenv.config(); // dotenv.config(path:'path of env ') if the env is in another file
+
+connectDB();
 
 
 const app=express();
