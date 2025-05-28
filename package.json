@@ -19,6 +19,7 @@
     "server": "nodemon server.js"
   },
   "dependencies": {
+    "backend-project": "file:",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
