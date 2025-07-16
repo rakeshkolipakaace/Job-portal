@@ -15,6 +15,7 @@ import cors from "cors";
 import morgan from "morgan";
 
 import authRoutes from "./routes/authRoutes.js";
+import errorMiddleware from "./middlewares/errorMiddelware.js";
 
 //config
 dotenv.config(); // dotenv.config(path:'path of env ') if the env is in another file
@@ -37,6 +38,9 @@ app.use(morgan("dev"));
 //routes
 app.use("/api/v1/test", testRoutes);
 app.use("/api/v1/auth", authRoutes);
+
+//validation middelware
+app.use(errorMiddleware);
 
 //port....
 const PORT = process.env.PORT || 4000;
