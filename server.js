@@ -15,7 +15,10 @@ import cors from "cors";
 import morgan from "morgan";
 
 import authRoutes from "./routes/authRoutes.js";
+
 import errorMiddleware from "./middlewares/errorMiddelware.js";
+
+import "express-async-errors"; // to handle async errors in express
 
 //config
 dotenv.config(); // dotenv.config(path:'path of env ') if the env is in another file
