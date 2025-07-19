@@ -45,6 +45,12 @@ userSchema.pre("save", async function () {
   this.password = await bcrypt.hash(this.password, salt);
 });
 
+//compare password
+
+userSchema.methods.comparePassword = async function (userPassword) {
+  const ismatch = await bcrypt.compare(userPassword, this.password);
+  return ismatch;
+};
 //jsonwebtoken
 
 userSchema.methods.createJWT = function () {
