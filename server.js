@@ -16,6 +16,8 @@ import morgan from "morgan";
 
 import authRoutes from "./routes/authRoutes.js";
 
+import userRoutes from "./routes/userRoutes.js";
+
 import errorMiddleware from "./middlewares/errorMiddelware.js";
 
 import "express-async-errors"; // to handle async errors in express
@@ -41,6 +43,7 @@ app.use(morgan("dev"));
 //routes
 app.use("/api/v1/test", testRoutes);
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/user", userRoutes);
 
 //validation middelware
 app.use(errorMiddleware);
