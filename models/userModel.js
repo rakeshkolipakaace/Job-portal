@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema(
     },
 
     lastName: {
-      typr: String,
+      type: String,
     },
 
     email: {
@@ -41,6 +41,7 @@ const userSchema = new mongoose.Schema(
 //middelware
 
 userSchema.pre("save", async function () {
+  if(!this.isModified) return;
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
 });
