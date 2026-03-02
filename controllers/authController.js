@@ -71,28 +71,28 @@ export const registerController = async (req, res, next) => {
       name: user.name,
       lastName: user.lastName,
       email: user.email,
+      location: user.location,
     },
     token,
   });
 };
 
-export const loginController = async (req, res) => {
+export const loginController = async (req, res, next) => {
   const { email, password } = req.body;
   if (!email || !password) {
-    next("Please provide all fields");
+    return next(new Error("Please provide all fields"));
   }
 
-  //find user by name
+  //find user by email
   const user = await userModel.findOne({ email }).select("+password");
   if (!user) {
-    next("Invalid Username or password");
+    return next(new Error("Invalid Username or password"));
   }
 
   //compare password
-
   const ismatch = await user.comparePassword(password);
   if (!ismatch) {
-    next("Invalid Username or password");
+    return next(new Error("Invalid Username or password"));
   }
 
   user.password = undefined;
